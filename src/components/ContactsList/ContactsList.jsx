@@ -1,15 +1,16 @@
 import React from 'react';
 import css from './ContactsList.module.css';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-export function ContactsList({ contacts, deleteContact }) {
+export function ContactsList() {
+  const contacts = useSelector(state => state.contacts);
   return (
     <ul>
       {contacts.map(({ id, name, number }) => (
         <li key={id} className={css.item}>
           <div className={css.name}>{name}</div>
           <div>{number}</div>
-          <button className={css.button} onClick={() => deleteContact(id)}>
+          <button className={css.button} onClick={() => {}}>
             Delete
           </button>
         </li>
@@ -17,8 +18,3 @@ export function ContactsList({ contacts, deleteContact }) {
     </ul>
   );
 }
-
-ContactsList.propTypes = {
-  contacts: PropTypes.array,
-  deleteContact: PropTypes.func,
-};
