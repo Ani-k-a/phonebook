@@ -4,10 +4,12 @@ import { persistReducer } from "redux-persist";
 
 export const contactsSlice = createSlice({
     name: 'contacts',
-    initialState: [],
+    initialState: {
+        items: []
+    },
     reducers: {
         addContact: {
-            reducer(state, action) { state.push(action.payload) },
+            reducer(state, action) { state.items.push(action.payload) },
             prepare({ name, number }) {
                 return {
                     payload: {
@@ -18,7 +20,10 @@ export const contactsSlice = createSlice({
                 }
             }
         },
-        deleteContact(state, action) { return state.filter(item => item.id !== action.payload) }
+        deleteContact(state, action) {
+            return state.items.filter(item => item.id !== action.payload
+            )
+        }
     }
 
 }
