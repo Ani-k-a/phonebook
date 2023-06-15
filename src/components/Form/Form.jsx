@@ -3,7 +3,7 @@ import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import toast, { Toaster } from 'react-hot-toast';
-import { addContact } from 'redux/sliceContacts';
+import { addContact } from 'redux/operations';
 
 export function Form() {
   const [name, setName] = useState('');
