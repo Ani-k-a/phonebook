@@ -12,12 +12,12 @@ export const contactsSlice = createSlice({
         [fetchContacts.pending](state) {
             state.isLoading = true;
         },
-        [fetchContacts.fulfilled](state) {
+        [fetchContacts.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
             state.items = action.payload;
         },
-        [fetchContacts.rejected](state) {
+        [fetchContacts.rejected](state, action) {
             state.isLoading = false;
             state.error = action.payload;
         }

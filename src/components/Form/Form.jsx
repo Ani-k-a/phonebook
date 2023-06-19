@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { selectors, operations } from 'redux/index';
 import toast, { Toaster } from 'react-hot-toast';
-import { addContact } from 'redux/operations';
 
 export function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectors.selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
@@ -18,7 +17,7 @@ export function Form() {
       toast(`${name} is already in contacts`);
       return;
     }
-    dispatch(addContact({ name, number }));
+    dispatch(operations.addContact({ name, number }));
     setName('');
     setNumber('');
   };

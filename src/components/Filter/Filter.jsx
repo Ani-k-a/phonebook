@@ -1,11 +1,10 @@
 import React from 'react';
 import css from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from 'redux/selectors';
-import { setFilter } from 'redux/sliceFilter';
+import { selectors } from 'redux/index';
 
 export function Filter() {
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectors.selectFilter);
   const dispatch = useDispatch();
 
   return (
@@ -13,7 +12,7 @@ export function Filter() {
       Find contacts by name
       <input
         className={css.input}
-        onChange={ev => dispatch(setFilter(ev.target.value))}
+        onChange={ev => dispatch(selectors.selectFilter(ev.target.value))}
         value={filter}
         type="text"
         name="filter"

@@ -1,12 +1,16 @@
 import css from './ContactsList.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilteredContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/operations';
+import { selectors, operations } from 'redux/index';
+import { useEffect } from 'react';
 
 export function ContactsList() {
-  const contacts = useSelector(getFilteredContacts);
+  const contacts = useSelector(selectors.selectFilteredContacts);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(operations.fetchContacts());
+  }, [dispatch]);
 
   return (
     <ul>
@@ -16,7 +20,7 @@ export function ContactsList() {
           <div>{number}</div>
           <button
             className={css.button}
-            onClick={() => dispatch(deleteContact(id))}
+            onClick={() => dispatch(operations.deleteContact(id))}
           >
             Delete
           </button>
