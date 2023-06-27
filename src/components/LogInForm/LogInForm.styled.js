@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const Section = styled.section`
 width: 1230px;
 padding: 0 15px;
-margin: 0 auto`
+margin-left: auto;
+magin-right: auto`
 
 export const Form = styled(Box)`
 display: flex;
@@ -13,5 +14,6 @@ justify-content: center;
 align-items: center;
 gap: 15px;
 width: 300px;
-margin: 0 auto;
+margin-left: auto;
+magin-right: auto;
 `

@@ -9,7 +9,8 @@ display: flex;
 justify-content: space-between;
 width: 1230px;
 padding: 0 15px;
-margin: 0 auto
+margin-left: auto;
+magin-right: auto
 `
 export const Block = styled.div`
 

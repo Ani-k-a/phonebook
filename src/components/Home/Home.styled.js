@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Section = styled.section`
 width: 1230px;
 padding: 0 15px;
-margin: 0 auto`
+margin-left: auto;
+magin-right: auto`
 
 export const Text = styled.p`
 font-size: 45px;

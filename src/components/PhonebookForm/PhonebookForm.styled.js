@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 
 export const Form = styled.form`
-    margin: 0 auto;
+margin-left: auto;
+magin-right: auto;
     padding: 35px 0 ;
     text-align: center;`
 
