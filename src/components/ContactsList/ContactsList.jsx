@@ -1,31 +1,53 @@
-import css from './ContactsList.module.css';
-
+import { deleteContact, fetchAllContacts } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectors, operations } from 'redux/index';
+import { selectFilteredContacts } from 'redux/selectors';
 import { useEffect } from 'react';
+import { PhonebookForm } from 'components/PhonebookForm/PhonebookForm';
+import { Filter } from 'components/Filter/Filter';
+import {
+  ContactWrapper,
+  Item,
+  List,
+  Section,
+  Text,
+} from './ContactsList.styled';
+import { Button } from '@mui/material';
 
 export function ContactsList() {
-  const contacts = useSelector(selectors.selectFilteredContacts);
+  const filteredContacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(operations.fetchContacts());
+    dispatch(fetchAllContacts());
   }, [dispatch]);
 
   return (
-    <ul>
-      {contacts.map(({ id, name, number }) => (
-        <li key={id} className={css.item}>
-          <div className={css.name}>{name}</div>
-          <div>{number}</div>
-          <button
-            className={css.button}
-            onClick={() => dispatch(operations.deleteContact(id))}
-          >
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
+    <Section>
+      <PhonebookForm />
+      <Filter />
+      <List>
+        {filteredContacts.map(contact => {
+          return (
+            <Item key={contact.id} id={contact.id}>
+              <ContactWrapper>
+                <Text>{contact.name}</Text>
+                <Text>{contact.number}</Text>
+              </ContactWrapper>
+              <Button
+                style={{
+                  backgroundColor: '#4b754b',
+                  display: 'block',
+                  padding: '5px 25px',
+                  color: 'white',
+                }}
+                onClick={() => dispatch(deleteContact(contact.id))}
+              >
+                Delete
+              </Button>
+            </Item>
+          );
+        })}
+      </List>
+    </Section>
   );
 }
