@@ -21,14 +21,7 @@ export function RegisterForm() {
   };
   return (
     <Section>
-      <Form
-        component="form"
-        sx={{
-          '& > :not(style)': { m: 1, width: '25ch' },
-        }}
-        autoComplete="off"
-        onSubmit={handleSubmit}
-      >
+      <Form component="form" autoComplete="off" onSubmit={handleSubmit}>
         <TextField
           id="outlined-basic"
           type="text"

@@ -9,22 +9,20 @@ magin-right: auto;
     text-align: center;`
 
 export const Label = styled.label`
- margin-right: 15px;
-    font - style: italic;
+ margin-right: 25px;
+ 
     `
 
 export const Input = styled.input`
 margin-left: 10px;
-    padding: 5px 5px;
     background-color: transparent;
-    border-radius: 4px;
-     outline: transparent;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgb(230, 230, 230);
     
     &:focus {
         border-color: black;
     }`
 
 export const ButtonForm = styled(Button)`
-margin-top: 15px
 `
-

@@ -8,6 +8,7 @@ color: white;
 text-decoration: none;
 font-size: 18px;
 font-weight: 600;
+text-transform: uppercase;
 
 &:hover, &:focus, &:active {
     color: black
@@ -15,5 +16,6 @@ font-weight: 600;
 
 export const Wrapper = styled.div`
 display: flex;
-gap: 25px
+gap: 25px;
+align-items: center;
 `

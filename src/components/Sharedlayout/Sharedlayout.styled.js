@@ -8,10 +8,10 @@ export const Header = styled.header`
 display: flex;
 justify-content: space-between;
 width: 1230px;
-padding: 0 15px;
+padding: 25px 15px;
 margin-left: auto;
-magin-right: auto
+margin-right: auto;
 `
 export const Block = styled.div`
 
-background-color: green;`
+background-color: rgba(11, 79, 255, 0.75);`

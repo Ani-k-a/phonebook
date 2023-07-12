@@ -10,6 +10,7 @@ import {
   List,
   Section,
   Text,
+  Phone,
 } from './ContactsList.styled';
 import { Button } from '@mui/material';
 
@@ -31,11 +32,13 @@ export function ContactsList() {
             <Item key={contact.id} id={contact.id}>
               <ContactWrapper>
                 <Text>{contact.name}</Text>
-                <Text>{contact.number}</Text>
+                <Phone>{contact.number}</Phone>
               </ContactWrapper>
               <Button
                 style={{
-                  backgroundColor: '#4b754b',
+                  borderRadius: '12px',
+                  background: '#0B4FFF',
+                  // backgroundColor: '#4b754b',
                   display: 'block',
                   padding: '5px 25px',
                   color: 'white',

@@ -6,7 +6,8 @@ color: #fff`
 
 export const Wrapper = styled.div`
 display: flex;
-gap: 25px`;
+gap: 25px;
+align-items: center;`
 
 export const Button = styled.button`
 border: none;

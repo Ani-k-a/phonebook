@@ -68,9 +68,11 @@ export function PhonebookForm() {
         variant="contained"
         type="submit"
         style={{
-          backgroundColor: '#4b754b',
+          borderRadius: '12px',
+          background: '#0B4FFF',
           display: 'block',
           padding: '5px 25px',
+          color: 'white',
           margin: '20px auto',
         }}
       >

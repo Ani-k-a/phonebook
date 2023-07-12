@@ -1,5 +1,14 @@
 @import-normalize;
 
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: rgba(252, 247, 247, 0.749);
   margin: 0;
@@ -8,6 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
 code {
@@ -15,7 +25,10 @@ code {
     monospace;
 }
 
-ul, h1, h2 {
+ul,
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
 }
